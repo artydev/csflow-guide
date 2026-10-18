@@ -103,6 +103,24 @@ svg.edges path.pre{stroke-dashoffset:1}
 .steplist b{display:block}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
+
+/* developers */
+.flow{list-style:none;margin:0 0 2.4rem;padding:0;display:flex;flex-wrap:wrap;gap:.7rem 0;align-items:stretch}
+.flow li{position:relative;border:2px solid;border-radius:12px;padding:.7rem 1rem;margin-right:2.2rem;min-width:9.5rem}
+.flow li:not(:last-child)::after{content:"»";position:absolute;right:-1.75rem;top:50%;transform:translateY(-50%);font-weight:800;font-size:1.4rem;color:var(--muted)}
+.flow li:last-child{margin-right:0}
+.flow b{display:block;font-size:1.0625rem}
+.flow span{font-size:.9375rem}
+.flow .py{background:var(--py-bg);border-color:var(--py-line);color:var(--py)}
+.flow .ia{background:var(--ia-bg);border-color:var(--ia-line);color:var(--ia)}
+.flow .hu{background:var(--hu-bg);border-color:var(--hu-line);color:var(--hu)}
+.dev{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 2.5rem;list-style:none;margin:0;padding:0}
+.dev li{padding:1rem 0;border-top:2px solid var(--line)}
+.dev b{display:block;font-size:1.125rem}
+.dev span{color:var(--muted)}
+.devnote{margin:1.6rem 0 0;font-size:1.0625rem}
+.devnote code,.facts code,.sub code{font:.9375em var(--mono);background:#e2e8f0;border-radius:4px;padding:.05em .35em}
+
 /* sections */
 section{padding:4.5rem 0}
 h2.t{font-size:clamp(1.8rem,4vw,2.9rem);line-height:1.1;letter-spacing:-.025em;margin:0 0 1rem;max-width:22ch}
@@ -162,7 +180,10 @@ footer a{color:#93c5fd}
   .steplist{display:grid}
   .stage-top h2{display:none}
   .trio{grid-template-columns:1fr}
-  .split,.legend,.trust{grid-template-columns:1fr}
+  .split,.legend,.trust,.dev{grid-template-columns:1fr}
+  .flow li{margin-right:0;width:100%}
+  .flow li:not(:last-child)::after{content:"↓";right:auto;left:1rem;top:auto;bottom:-1.55rem;transform:none}
+  .flow{gap:1.7rem 0}
   .nav ul{margin-left:0}
 }
 @media (prefers-reduced-motion:reduce){
@@ -181,6 +202,7 @@ footer a{color:#93c5fd}
       <ul>
         <li><a href="#roles">Les trois rôles</a></li>
         <li><a href="#interface">Interface</a></li>
+        <li><a href="#developpeurs">Développeurs</a></li>
         <li><a href="index.html">Démo vidéo</a></li>
         <li><a href="documentation_csflow.html">Documentation</a></li>
         <li><a class="cta" href="#demarrer">Démarrer</a></li>
@@ -296,6 +318,29 @@ footer a{color:#93c5fd}
   <span class="k">message:</span> <span class="s">"Statut : {{statut.output}}. Diffuser ?"</span>
   <span class="k">on_approve:</span> <span class="v">relecture</span>
   <span class="k">on_reject:</span> <span class="v">annule</span></pre>
+  </div>
+</section>
+
+<section id="developpeurs">
+  <div class="wrap">
+    <h2 class="t">Pour les développeurs : des routines fiables, un humain aux commandes</h2>
+    <p class="sub">Les tests, git et vos scripts restent des commandes exactes. CSAgent n’intervient que là où il faut lire du code. Voici le workflow <code>dev-fix-tests</code>, livré avec CSFlow.</p>
+    <ol class="flow" aria-label="Étapes du workflow dev-fix-tests">
+      <li class="py"><b>Lancer les tests</b><span>Python · unittest</span></li>
+      <li class="ia"><b>Corriger le code</b><span>CSAgent · sans toucher aux tests</span></li>
+      <li class="py"><b>Relancer les tests</b><span>Python · git diff</span></li>
+      <li class="hu"><b>Valider</b><span>Vous · commit ou annulation</span></li>
+      <li class="py"><b>Committer</b><span>Python · git</span></li>
+    </ol>
+    <ul class="dev">
+      <li><b>Corriger les tests qui échouent</b><span>CSAgent reçoit l’erreur exacte des tests. Si tout passe déjà, l’étape est ignorée avec <code>skip_if</code>.</span></li>
+      <li><b>Préparer une revue de code</b><span><code>git diff</code> rassemble les faits, CSAgent rédige la synthèse, vous relisez avant de la publier.</span></li>
+      <li><b>Rédiger des notes de version</b><span><code>git log</code> extrait les commits, CSAgent écrit le texte, rien n’est publié sans votre accord.</span></li>
+      <li><b>Trier des logs d’incident</b><span>Une commande ou un appel <code>http</code> récupère les logs. L’escalade n’a lieu que si la gravité est haute.</span></li>
+      <li><b>Versionner vos routines</b><span>Un workflow est un fichier YAML : relisible dans une pull request et partageable avec l’équipe.</span></li>
+      <li><b>Contrôler avant de lancer</b><span><code>python engine.py --check mon.yaml</code> signale les erreurs de syntaxe ou d’étapes avant l’exécution, y compris dans un script de CI.</span></li>
+    </ul>
+    <p class="devnote">En cas de rejet, <code>git checkout</code> remet le code dans son état de départ. Le workflow de démonstration travaille dans son propre dépôt git, jamais dans votre projet.</p>
   </div>
 </section>
 
