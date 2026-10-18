@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
 <title>CSFlow — Démonstration : préparation d'un COPIL</title>
-<meta name="description" content="Vidéo de démonstration de CSFlow : un workflow qui prépare un COPIL, avec Python pour les calculs, CSAgent pour la lecture et la rédaction, et une validation humaine.">
+<meta name="description" content="Vidéo de démonstration de CSFlow : un workflow qui prépare un COPIL, avec Python pour l’orchestration, CSAgent pour la lecture et la rédaction, et une validation humaine.">
 <style>
 /* Mêmes couleurs, polices et contrastes (WCAG AA) que l'application CSFlow.
    Tailles en rem : elles suivent la taille de texte du navigateur. */
@@ -145,6 +145,7 @@ footer strong { color: var(--head-text); }
   <div class="wrap hero">
     <p class="eyebrow">Vidéo de démonstration</p>
     <h1>Préparer un COPIL avec CSFlow</h1>
+    <p class="lead">Un workflow enchaîne les étapes : il prépare un plan de projet et des notes de réunion, calcule les indicateurs, fait rédiger le rapport pour la direction, et attend la validation du chef de projet avant toute diffusion.</p>
     <ul class="facts" aria-label="Le cas de démonstration">
       <li class="fact">Projet fictif « Refonte du portail usagers »</li>
       <li class="fact">10 tâches et une réunion hebdomadaire</li>
@@ -162,13 +163,13 @@ footer strong { color: var(--head-text); }
            Pour une image de couverture : ajoutez  poster="couverture.jpg"  sur la balise video.
            Pour des sous-titres :         ajoutez  <track kind="captions" src="sous-titres.vtt" srclang="fr" label="Français" default>  -->
       <video id="demo" controls preload="metadata" playsinline aria-label="Vidéo de démonstration de CSFlow : préparation d'un COPIL">
-        <source id="demo-src" src="csflow-copil.webm" type="video/webm">
+        <source id="demo-src" src="csflow-copil.mp4" type="video/mp4">
         <p>Votre navigateur ne sait pas lire cette vidéo.
-           <a href="csflow-copil.webm">Télécharger la vidéo</a>.</p>
+           <a href="csflow-copil.mp4">Télécharger la vidéo</a>.</p>
       </video>
       <p class="video-hint" id="video-hint" role="status">Vidéo introuvable : placez le fichier <code>csflow-copil.mp4</code> dans le même dossier que cette page.</p>
     </div>
-    <p class="video-note" style="font-size:18px">La vidéo montre l'exécution complète du workflow « Préparation du COPIL » dans l'interface CSFlow : le graphe se colore étape par étape et le journal d'exécution s'affiche en direct.</p>
+    <p class="video-note">La vidéo montre l'exécution complète du workflow « Préparation du COPIL » dans l'interface CSFlow : le graphe se colore étape par étape et le journal d'exécution s'affiche en direct.</p>
   </div>
 
   <!-- ── Les quatre messages ───────────────────────────────────────────────── -->
@@ -179,14 +180,14 @@ footer strong { color: var(--head-text); }
 
         <article class="card">
           <h3><span class="num" aria-hidden="true">1</span>Le but du workflow</h3>
-          <p>Ce workflow prépare automatiquement le COPIL d'un projet : il calcule l'avancement, analyse les notes de réunion et rédige le rapport de synthèse.</p>
+          <p>Ce workflow prépare automatiquement le COPIL d'un projet : Python enchaîne les étapes, CSAgent analyse les notes de réunion et rédige le rapport de synthèse.</p>
           <p><strong>Rien n'est diffusé sans l'accord du chef de projet.</strong></p>
         </article>
 
         <article class="card py">
-          <h3><span class="num" aria-hidden="true">2</span>Le rôle de Python <span class="chip py">⚡ Calculs exacts</span></h3>
-          <p>Python fait les calculs : valeur acquise, indice de performance des coûts (CPI), retards et dérive.</p>
-          <p>Ces chiffres viennent du code, pas d'une IA : ils sont exacts et reproductibles.</p>
+          <h3><span class="num" aria-hidden="true">2</span>Le rôle de Python <span class="chip py">⚡ Orchestration</span></h3>
+          <p>Python orchestre le workflow : il enchaîne les étapes, lance les scripts, écrit les fichiers et choisit la suite selon le statut du projet.</p>
+          <p>Il calcule aussi les indicateurs (valeur acquise, indice de performance des coûts, retards, dérive) : ces chiffres viennent du code, pas d'une IA, donc ils sont exacts et reproductibles.</p>
         </article>
 
         <article class="card ia">
