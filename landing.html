@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSFlow – Workflows orchestrés en Python</title>
-<meta name="description" content="CSFlow : des workflows YAML où Python calcule, CSAgent lit et rédige, et vous décidez.">
+<meta name="description" content="CSFlow : des workflows YAML où Python orchestre, CSAgent lit et rédige, et vous décidez.">
 <style>
 :root{
   --bg:#f1f5f9; --surface:#fff; --text:#0f172a; --muted:#475569; --line:#cbd5e1;
@@ -215,8 +215,8 @@ footer a{color:#93c5fd}
 <div class="hero" id="top">
   <div class="wrap">
     <span class="tag"><i aria-hidden="true"></i> Workflows orchestrés en Python, propulsés par CSAgent</span>
-    <h1><span class="p">Python calcule.</span><span class="i">L’IA lit.</span><span class="h">Vous décidez.</span></h1>
-    <p class="lead">CSFlow enchaîne calculs exacts, lecture de documents par l’IA et validation humaine dans un simple fichier YAML. Rien ne part sans votre accord.</p>
+    <h1><span class="p">Python orchestre.</span><span class="i">L’IA lit.</span><span class="h">Vous décidez.</span></h1>
+    <p class="lead">CSFlow orchestre vos commandes, vos scripts, vos appels réseau et un agent IA dans un simple fichier YAML, avec une validation humaine avant tout ce qui engage. Rien ne part sans votre accord.</p>
     <div class="btns">
       <a class="btn pri" href="#demarrer">Lancer CSFlow</a>
       <a class="btn sec" href="index.html">Voir la démo vidéo</a>
@@ -231,7 +231,7 @@ footer a{color:#93c5fd}
         </div>
       </div>
       <div class="lanes" id="lanes" aria-hidden="true">
-        <div class="lane l0"><span>Python · exécution</span></div>
+        <div class="lane l0"><span>Python · orchestration</span></div>
         <div class="lane l1"><span>CSAgent · lecture et rédaction</span></div>
         <div class="lane l2"><span>Vous · décision</span></div>
         <svg class="edges" id="edges" viewBox="0 0 1200 420" preserveAspectRatio="none"></svg>
@@ -249,15 +249,15 @@ footer a{color:#93c5fd}
 <section id="roles">
   <div class="wrap">
     <h2 class="t">Chacun fait ce qu’il fait de mieux</h2>
-    <p class="sub">Un projet fictif, une réunion hebdomadaire, un COPIL dans 6 jours. Le workflow répartit le travail selon une règle simple : ce qui doit être exact est calculé, ce qui demande de lire est confié à l’IA, ce qui engage est décidé par vous.</p>
+    <p class="sub">Un projet fictif, une réunion hebdomadaire, un COPIL dans 6 jours. Le workflow répartit le travail selon une règle simple : ce qui s’exécute est piloté par Python, ce qui demande de lire est confié à l’IA, ce qui engage est décidé par vous.</p>
     <div class="trio">
       <article class="t-py">
         <h3>Python</h3>
-        <p class="role">Ce qui doit être exact</p>
+        <p class="role">Ce qui s’exécute</p>
         <ul>
-          <li>Valeur acquise, CPI, retards, dérive</li>
-          <li>Statut global : VERT, ORANGE ou ROUGE</li>
-          <li>Écriture des fichiers, appels réseau, commandes</li>
+          <li>Enchaîne les étapes, les branches et les reprises</li>
+          <li>Lance commandes, scripts, appels réseau et écritures de fichiers</li>
+          <li>Calcule quand il le faut : indicateurs, statut VERT, ORANGE ou ROUGE</li>
         </ul>
       </article>
       <article class="t-ia">
@@ -324,7 +324,7 @@ footer a{color:#93c5fd}
 <section id="developpeurs">
   <div class="wrap">
     <h2 class="t">Pour les développeurs : des routines fiables, un humain aux commandes</h2>
-    <p class="sub">Les tests, git et vos scripts restent des commandes exactes. CSAgent n’intervient que là où il faut lire du code. Voici le workflow <code>dev-fix-tests</code>, livré avec CSFlow.</p>
+    <p class="sub">Python orchestre les tests, git et vos scripts, étape après étape. CSAgent n’intervient que là où il faut lire du code. Voici le workflow <code>dev-fix-tests</code>, livré avec CSFlow.</p>
     <ol class="flow" aria-label="Étapes du workflow dev-fix-tests">
       <li class="py"><b>Lancer les tests</b><span>Python · unittest</span></li>
       <li class="ia"><b>Corriger le code</b><span>CSAgent · sans toucher aux tests</span></li>
@@ -398,7 +398,7 @@ start_agent.bat</pre><button type="button" class="cp" data-c="set ALBERT_API_KEY
 (function(){
   var N=[
     {id:'plan',l:0,t:'Plan et notes',s:'fichiers',c:'Python prépare le plan de projet et les notes de la réunion hebdomadaire.'},
-    {id:'ind',l:0,t:'Indicateurs',s:'calcul exact',c:'Python calcule la valeur acquise, le CPI, les retards et la dérive. Aucun chiffre n’est deviné.'},
+    {id:'ind',l:0,t:'Indicateurs',s:'calcul',c:'Python calcule la valeur acquise, le CPI, les retards et la dérive. Aucun chiffre n’est deviné.'},
     {id:'stat',l:0,t:'Statut global',s:'règle de calcul',b:'ROUGE',c:'Python applique la règle : le statut du projet est ROUGE.'},
     {id:'ris',l:1,t:'Risques, actions',s:'lit les notes',c:'CSAgent lit les notes libres et en tire risques, actions et décisions.'},
     {id:'rap',l:1,t:'Rapport',s:'rédaction',c:'CSAgent rédige le rapport pour la direction.'},
