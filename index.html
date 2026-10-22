@@ -203,6 +203,7 @@ footer a{color:#93c5fd}
         <li><a href="#roles">Les trois rôles</a></li>
         <li><a href="#interface">Interface</a></li>
         <li><a href="#developpeurs">Développeurs</a></li>
+        <li><a href="#mcp">Depuis CSAgent</a></li>
         <li><a href="video.html">Démo vidéo</a></li>
         <li><a href="documentation_csflow.html">Documentation</a></li>
         <li><a class="cta" href="#demarrer">Démarrer</a></li>
@@ -341,6 +342,26 @@ footer a{color:#93c5fd}
       <li><b>Contrôler avant de lancer</b><span><code>python engine.py --check mon.yaml</code> signale les erreurs de syntaxe ou d’étapes avant l’exécution, y compris dans un script de CI.</span></li>
     </ul>
     <p class="devnote">En cas de rejet, <code>git checkout</code> remet le code dans son état de départ. Le workflow de démonstration travaille dans son propre dépôt git, jamais dans votre projet.</p>
+  </div>
+</section>
+
+<section id="mcp">
+  <div class="wrap">
+    <h2 class="t">Lancez vos workflows depuis CSAgent</h2>
+    <p class="sub">Avec l’option <code>CSFlow --mcp</code>, CSFlow s’ouvre sans interface et CSAgent pilote vos workflows à votre place : vous demandez, il lance et suit le déroulement.</p>
+    <ol class="flow" aria-label="Chaîne du mode MCP">
+      <li class="hu"><b>Vous demandez</b><span>« Lance demo_report »</span></li>
+      <li class="ia"><b>CSAgent</b><span>vous demande la permission</span></li>
+      <li class="py"><b>CSFlow</b><span>exécute le workflow, étape par étape</span></li>
+      <li class="ia"><b>CSAgent (worker)</b><span>traite les étapes agent</span></li>
+    </ol>
+    <ul class="dev">
+      <li><b>Quatre actions</b><span>Lister les workflows, les vérifier, en lancer un, suivre son état jusqu’à la fin.</span></li>
+      <li><b>Les longs workflows tiennent</b><span>Un workflow de plusieurs minutes est suivi par appels successifs : rien n’est coupé au bout d’une minute.</span></li>
+      <li><b>La validation humaine reste chez vous</b><span>Un workflow qui demande votre accord est refusé : vous le lancez depuis l’interface et vous approuvez vous-même.</span></li>
+      <li><b>Un workflow à la fois, dans un seul dossier</b><span>Seuls les fichiers du dossier <code>workflows</code> sont accessibles.</span></li>
+    </ul>
+    <p class="devnote">Les étapes <code>shell</code> et <code>python</code> d’un workflow ne passent pas par le filtre de commandes de CSAgent : réservez ce mode à des workflows et à un dossier de confiance. Mise en route : <code>start_csagent.bat</code>, détaillée dans la <a href="documentation_csflow.html#mcp">documentation</a>.</p>
   </div>
 </section>
 
